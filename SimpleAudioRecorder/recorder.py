@@ -97,6 +97,9 @@ class RotatingWavWriter:
             mp3_path = os.path.splitext(wav_path)[0] + ".mp3"
             # 非同期エンコード
             self.encode_q.put((wav_path, mp3_path))
+            print(f"[INFO] Saved MP3: {mp3_path}")
+        else:
+            print(f"[INFO] Saved WAV: {wav_path}")
 
         self.current_file = None
 
